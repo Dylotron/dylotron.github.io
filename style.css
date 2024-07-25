@@ -10,7 +10,7 @@ html {
 body {
 	min-height: 100vh;
 	margin: var(--layout-outer-margin) auto;			
-	font: 17px "Arial";
+	font: 17px "Aileron Light", sans-serif;
 	line-height: 1.3;
 	color: white;
 	width: 1400px;
@@ -36,7 +36,7 @@ header {
 header h1 {
 	margin: 0;
 	font-size: 53px;
-	font-family: "Arial Black", sans-serif;
+	font: "Aileron Black", sans-serif;
 	}
 	
 img {
@@ -69,7 +69,7 @@ pre {
 	}
 	
 .bodybox h2 {
-	font:22px "Arial Black";
+	font:22px "Aileron Bold", sans-serif;
 	line-height: 0.5;
 	}
 
@@ -79,7 +79,7 @@ nav a {
 	text-decoration: none;
 	text-align: right;
 	color: white;
-	font: 20px "Arial Black";
+	font: 20px "Aileron Bold", sans-serif;
 	border:2px solid transparent;
 	}
 				
