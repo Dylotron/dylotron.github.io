@@ -1,0 +1,92 @@
+:root {
+	--panel-half-width: 30px; /* half desired width between sidebox and main box */
+	--layout-outer-margin: 20px;
+}
+
+html {
+	background-color: black;
+	}
+				
+body {
+	min-height: 100vh;
+	margin: var(--layout-outer-margin) auto;			
+	font: 17px "Arial";
+	line-height: 1.3;
+	color: white;
+	width: 1400px;
+	max-width: calc(100% - var(--layout-outer-margin) - var(--layout-outer-margin));
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: var(--panel-half-width);
+	}
+
+.side-box {
+	position: sticky;
+	top: var(--layout-outer-margin);
+	box-sizing: border-box;
+	border-right: 2px solid white;
+	padding: 5px var(--panel-half-width) 10px 0;
+	height: max-content;
+}
+
+header {
+	margin-bottom: 10px;
+}
+	
+header h1 {
+	margin: 0;
+	font-size: 53px;
+	font-family: "Arial Black", sans-serif;
+	}
+	
+img {
+	display: block;
+	max-width: 35%;
+	max-height: 1505;
+	float: left;
+	margin-right: 10px;
+	}
+	
+pre {
+	font: 17px "Courier New";
+	text-align: center;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	}
+	
+.bodygrid {
+	max-width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	}
+
+.bodybox {
+	clear: both;
+	overflow: hidden;
+	background-size: 100%;
+	padding: 10px 0;
+	}
+	
+.bodybox h2 {
+	font:22px "Arial Black";
+	line-height: 0.5;
+	}
+
+nav a {
+	display: block;
+	padding: 2px 0;
+	text-decoration: none;
+	text-align: right;
+	color: white;
+	font: 20px "Arial Black";
+	border:2px solid transparent;
+	}
+				
+nav a:hover {
+	border-bottom:2px solid white;
+	}
+					
+nav a.active {
+	border-left:5px solid white;
+	}
