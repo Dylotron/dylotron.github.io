@@ -10,7 +10,8 @@ html {
 body {
 	min-height: 100vh;
 	margin: var(--layout-outer-margin) auto;			
-	font: 17px "Aileron Light", sans-serif;
+	font: 17px "Aileron", sans-serif;
+	font-weight: light;
 	line-height: 1.3;
 	color: white;
 	width: 1400px;
@@ -36,7 +37,8 @@ header {
 header h1 {
 	margin: 0;
 	font-size: 53px;
-	font: "Aileron Black", sans-serif;
+	font: "Aileron", sans-serif;
+	font-style: black;
 	}
 	
 img {
@@ -69,7 +71,8 @@ pre {
 	}
 	
 .bodybox h2 {
-	font:22px "Aileron Bold", sans-serif;
+	font:22px "Aileron", sans-serif;
+	font-weight: bold;
 	line-height: 0.5;
 	}
 
@@ -79,7 +82,8 @@ nav a {
 	text-decoration: none;
 	text-align: right;
 	color: white;
-	font: 20px "Aileron Bold", sans-serif;
+	font: 20px "Aileron", sans-serif;
+	font-weight: bold;
 	border:2px solid transparent;
 	}
 				
