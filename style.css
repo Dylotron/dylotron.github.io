@@ -25,7 +25,7 @@ body {
 	position: sticky;
 	top: var(--layout-outer-margin);
 	box-sizing: border-box;
-	border-right: 2px solid white;
+	border-right: 2px solid #C600FF;
 	padding: 5px var(--panel-half-width) 10px 0;
 	height: max-content;
 }
@@ -39,6 +39,7 @@ header h1 {
 	font-size: 53px;
 	font-family: "Aileron", sans-serif;
 	font-style: 900;
+	color: #C600FF;
 	}
 	
 img {
@@ -81,7 +82,7 @@ nav a {
 	padding: 2px 0;
 	text-decoration: none;
 	text-align: right;
-	color: white;
+	color: #C600FF;
 	font: 20px "Aileron", sans-serif;
 	font-weight: 600;
 	border:2px solid transparent;
