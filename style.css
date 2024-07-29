@@ -44,10 +44,13 @@ header h1 {
 	
 img {
 	display: block;
-	max-width: 35%;
-	max-height: 1505;
+	object-fit: cover;
+	width: 99%;
+	height:20vh;
 	float: left;
-	margin-right: 10px;
+	padding: 2px;
+	margin: 1px;
+	outline: 1px solid white;
 	}
 	
 pre {
