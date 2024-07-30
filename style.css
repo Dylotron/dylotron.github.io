@@ -47,9 +47,9 @@ img {
 	object-fit: cover;
 	width: 99%;
 	height:20vh;
-	float: left;
 	padding: 4px;
 	margin: 1px;
+	margin-left: 2px;
 	outline: 2px solid white;
 	}
 	
