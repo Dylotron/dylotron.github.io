@@ -48,9 +48,9 @@ img {
 	width: 99%;
 	height:20vh;
 	float: left;
-	padding: 2px;
+	padding: 4px;
 	margin: 1px;
-	outline: 1px solid white;
+	outline: 2px solid white;
 	}
 	
 pre {
@@ -96,9 +96,8 @@ nav a:hover {
 	}
 
 iframe {
-	padding: 2px;
-	margin: 1px;
+	padding: 4px;
+	margin: 3px;
 	margin-left: 10px;
-	margin-right: 7px;
-	outline: 1px solid white;
+	outline: 2px solid white;
 	}
