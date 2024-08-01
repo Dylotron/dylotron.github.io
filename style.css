@@ -11,13 +11,13 @@ html {
 				
 body {
 	min-height: 100vh;
-	margin: var(--layout-outer-margin) auto;			
+	margin: var(--layout-outer-margin);			
 	font: 17px "Aileron", sans-serif;
 	font-weight: 100;
 	line-height: 1.3;
 	color: white;
-	width: 1400px;
-	max-width: calc(100% - var(--layout-outer-margin) - var(--layout-outer-margin));
+	width: calc(100% - var(--layout-outer-margin) - var(--layout-outer-margin));
+	max-width: 1400px;
 	display: grid;
 	
 	grid-template-columns: auto 1fr;
