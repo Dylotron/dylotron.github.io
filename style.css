@@ -11,7 +11,7 @@ html {
 				
 body {
 	min-height: 100vh;
-	margin: var(--layout-outer-margin);			
+	margin: var(--layout-outer-margin) auto;			
 	font: 17px "Aileron", sans-serif;
 	font-weight: 100;
 	line-height: 1.3;
