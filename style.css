@@ -1,6 +1,8 @@
 :root {
 	--panel-half-width: 30px; /* half desired width between sidebox and main box */
 	--layout-outer-margin: 20px;
+
+	--mobile-view-threshold: 700px; /* at what screen width should mobile view be enabled */
 }
 
 html {
@@ -17,6 +19,7 @@ body {
 	width: 1400px;
 	max-width: calc(100% - var(--layout-outer-margin) - var(--layout-outer-margin));
 	display: grid;
+	
 	grid-template-columns: auto 1fr;
 	gap: var(--panel-half-width);
 	}
@@ -25,9 +28,14 @@ body {
 	position: sticky;
 	top: var(--layout-outer-margin);
 	box-sizing: border-box;
-	border-right: 2px solid #C600FF;
 	padding: 5px var(--panel-half-width) 10px 0;
 	height: max-content;
+
+	/* Travis */
+	/* Add border stuff separately so that can be easily overriden */
+	border-color: #C600FF;
+	border-style: solid;
+	border-width: 0 2px 0 0; /* set right border 2px */
 }
 
 header {
@@ -45,14 +53,18 @@ header h1 {
 img {
 	display: block;
 	box-sizing: border-box;
-	object-fit: cover;
-	width: 99%;
-	height:20vh;
 	padding: 4px;
-	margin: 1px;
-	margin-left: 2px;
-	outline: 2px solid white;
+	border: 2px solid white;
+	max-width: 100%;
 	}
+
+/* Travis */
+/* Seperated object-fit images as you probably don't want that behaviour with every image*/
+.banner {
+	object-fit: cover;
+	height: 20vh;
+	width: 100%;
+}
 	
 pre {
 	font: 17px "Courier New";
@@ -71,7 +83,6 @@ pre {
 .bodybox {
 	clear: both;
 	overflow: hidden;
-	background-size: 100%;
 	padding: 10px 0;
 	}
 	
@@ -81,24 +92,85 @@ pre {
 	line-height: 0.5;
 	}
 
+nav {
+	/* Travis */
+	/* Make nav a flexbox so we can change how the links are organised more easily with media queries */
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column; /* set to position each item down-ways */
+	gap: 5px;
+}
+
 nav a {
 	display: block;
-	padding: 2px 0;
 	text-decoration: none;
 	text-align: right;
 	color: #C600FF;
 	font: 20px "Aileron", sans-serif;
 	font-weight: 600;
-	border:2px solid transparent;
+
+	/* Travis */
+	/* set some basic border stuff here so we can just change little bits on hover */
+	/* (makes it easier to change which border gets highlighted when changing between mobile and desktop viewports) */
+	border-width: 0 0 0 2px; /* set left margin to 2px - we'll change this property in media queries to change border side */
+	border-style: solid;
+	border-color: transparent;
 	}
 				
 nav a:hover {
-	border-left:5px solid #C600FF;
-	}
+	/* Travis */
+	/* We simply set the border colour, the width is already set :) */
+	/* (width either set above or by media query depending on screen size) */
+	border-color: #C600FF;
+}
 
+/* Travis' Notes */
+/* Look into making a separate class that floats blocks left and right within text content */
+/* Margin and Padding with magic numbers for seemingly no reason (to my eye) indicates it'll prob break in some odd condition */
 iframe {
 	padding: 4px;
 	margin: 3px;
 	margin-left: 10px;
-	outline: 2px solid white;
+	border: 2px solid white;
 	}
+
+
+/* Travis */
+/* The fun mobile viewport transformation bit */
+/* set so that mobile view will be enabled at screen width 700px and below */
+
+@media only screen and (max-width: 700px) {
+	body {
+		grid-template-columns: unset; /* we set the side-box and main-box to stack vertically */
+		grid-template-rows: auto 1fr; 
+	}
+
+	nav {
+		flex-direction: row; /* change flex direction to horizontal */
+		flex-wrap: wrap; /* allow multiple rows (for narrow screens) */
+		gap: 15px; /* increase gap between links for better touchscreen usability */ 
+	}
+
+	nav a {
+		border-width: 0 0 2px; /* override - set bottom width to 2px, disable all other borders */
+	}
+
+	.side-box {
+
+		position: static; /* disable sticking to save screen real-estate */
+
+		/* set side-box border to bottom 2px 
+		NOTE: Disabled because it I think it looks better keeping to right
+		Uncomment this to move border to bottom on navigation elements :) 
+		>>> border-width: 0 0 2px 0; */
+	}
+}
+
+/* Additional media query for any overrides for larger screens */
+@media only screen and (min-width: 1400px) {
+
+	.banner {
+		height: 30vh;
+	}
+
+}
