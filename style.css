@@ -141,6 +141,10 @@ iframe {
 	margin-left: 10px !important;
 }
 
+.clear { /* force clear any floated blocks */
+	clear: both;
+}
+
 video.banner,
 img.banner,
 image.banner { /* Seperated object-fit media as you probably don't want that behaviour with every image*/
