@@ -10,13 +10,14 @@ html {
 	}
 				
 body {
+	box-sizing: border-box;
 	min-height: 100vh;
-	margin: var(--layout-outer-margin) auto;			
+	margin: var(--layout-outer-margin) auto;
+	padding: 0 var(--layout-outer-margin);			
 	font: 17px "Aileron", sans-serif;
 	font-weight: 100;
 	line-height: 1.3;
 	color: white;
-	width: calc(100% - var(--layout-outer-margin) - var(--layout-outer-margin));
 	max-width: 1400px;
 	display: grid;
 	
@@ -57,14 +58,6 @@ img {
 	border: 2px solid white;
 	max-width: 100%;
 	}
-
-/* Travis */
-/* Seperated object-fit images as you probably don't want that behaviour with every image*/
-.banner {
-	object-fit: cover;
-	height: 20vh;
-	width: 100%;
-}
 	
 pre {
 	font: 17px "Courier New";
@@ -128,11 +121,37 @@ nav a:hover {
 /* Look into making a separate class that floats blocks left and right within text content */
 /* Margin and Padding with magic numbers for seemingly no reason (to my eye) indicates it'll prob break in some odd condition */
 iframe {
+	box-sizing: border-box;
 	padding: 4px;
-	margin: 3px;
-	margin-left: 10px;
+	margin: 3px 10px 3px 0;
 	border: 2px solid white;
+	max-width: 100%;
 	}
+
+
+/* HIGH-LEVEL CLASSES */
+
+.left { /* float any block to the left of its container */
+	float: left;
+	margin-right: 10px !important;
+}
+
+.right { /* float any block to the right of its container */
+	float: right;
+	margin-left: 10px !important;
+}
+
+.clear { /* force clear any floated blocks */
+	clear: both;
+}
+
+video.banner,
+img.banner,
+image.banner { /* Seperated object-fit media as you probably don't want that behaviour with every image*/
+	object-fit: cover;
+	height: 20vh;
+	width: 100%;
+}
 
 
 /* Travis */
