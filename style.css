@@ -3,8 +3,6 @@
 :root {
 	--panel-half-width: 30px; /* half desired gap between sidebox and main box */
 	--layout-outer-margin: 20px;
-
-	--mobile-view-threshold: 700px; /* at what screen width should mobile view be enabled */
 }
 
 html {
