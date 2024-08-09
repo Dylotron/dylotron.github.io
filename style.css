@@ -1,5 +1,7 @@
+
+/* variables */
 :root {
-	--panel-half-width: 30px; /* half desired width between sidebox and main box */
+	--panel-half-width: 30px; /* half desired gap between sidebox and main box */
 	--layout-outer-margin: 20px;
 
 	--mobile-view-threshold: 700px; /* at what screen width should mobile view be enabled */
@@ -117,9 +119,6 @@ nav a:hover {
 	border-color: #C600FF;
 }
 
-/* Travis' Notes */
-/* Look into making a separate class that floats blocks left and right within text content */
-/* Margin and Padding with magic numbers for seemingly no reason (to my eye) indicates it'll prob break in some odd condition */
 iframe {
 	box-sizing: border-box;
 	padding: 4px;
@@ -147,7 +146,7 @@ iframe {
 
 video.banner,
 img.banner,
-image.banner { /* Seperated object-fit media as you probably don't want that behaviour with every image*/
+image.banner { /* Seperated object-fit media styling as you probably don't want that behaviour with every image*/
 	object-fit: cover;
 	height: 20vh;
 	width: 100%;
@@ -185,7 +184,7 @@ image.banner { /* Seperated object-fit media as you probably don't want that beh
 	}
 }
 
-/* Additional media query for any overrides for larger screens */
+/* Additional media query for any overrides for larger (wider) screens */
 @media only screen and (min-width: 1400px) {
 
 	.banner {
