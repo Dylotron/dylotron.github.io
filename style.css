@@ -107,7 +107,7 @@ nav {
 	justify-content: flex-start;
 	flex-direction: column; /* set to position each item down-ways */
 	gap: 5px;
-}
+	}
 
 nav a {
 	display: block;
@@ -130,7 +130,19 @@ nav a:hover {
 	/* We simply set the border colour, the width is already set :) */
 	/* (width either set above or by media query depending on screen size) */
 	border-color: #C600FF;
-}
+	}
+
+p a {
+	text-decoration: none;
+	text-align: middle;
+	color: white;
+	font: 18px "Aileron", sans-serif;
+	font-weight: 100;
+	}
+	
+p a:hover {
+	color: #C600FF;
+	}
 
 iframe {
 	box-sizing: border-box;
