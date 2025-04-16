@@ -1,9 +1,8 @@
-
 /* variables */
 :root {
 	--panel-half-width: 30px; /* half desired gap between sidebox and main box */
 	--layout-outer-margin: 20px;
-}
+	}
 
 html {
 	background-color: black;
@@ -23,7 +22,7 @@ body {
 	
 	grid-template-columns: auto 1fr;
 	gap: var(--panel-half-width);
-}
+	}
 
 .side-box {
 	position: sticky;
@@ -36,27 +35,27 @@ body {
 	/* Add border stuff separately so that can be easily overriden */
 	border-color: #C600FF;
 	border-style: solid;
-	border-width: 0 2px 0 0; /* set right border 2px */
-}
+	border-width: 0 2px 0 0;
+	}
 
 header {
 	margin-bottom: 10px;
-}
+	}
 
 .lined-heading {
 	display: flex;
 	gap: 10px;
 	align-items: center;
-}
+	}
 .lined-heading * {
 	flex: 1 0 auto;
-}
+	}
 .lined-heading:after {
 	content: "";
 	height: 1px;
 	width: 100%;
 	background-color: white;
-}
+	}
 	
 header h1 {
 	margin: 0;
@@ -70,7 +69,7 @@ img {
 	display: block;
 	box-sizing: border-box;
 	padding: 4px;
-	border: 1px solid white;
+	border: 2px solid white;
 	max-width: 100%;
 	}
 	
@@ -105,7 +104,7 @@ nav {
 	/* Make nav a flexbox so we can change how the links are organised more easily with media queries */
 	display: flex;
 	justify-content: flex-start;
-	flex-direction: column; /* set to position each item down-ways */
+	flex-direction: column;
 	gap: 5px;
 	}
 
@@ -130,44 +129,58 @@ nav a:hover {
 	/* We simply set the border colour, the width is already set :) */
 	/* (width either set above or by media query depending on screen size) */
 	border-color: #C600FF;
+	background-color: rgba(198, 0, 255, 0.15);
 	}
 
-p a {
+citynav {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	gap: 5px;
+	font: 20px "Aileron", sans-serif;
+	}
+
+citynav a {
+	padding: 0px 5px 0px 5px;
 	text-decoration: none;
 	text-align: middle;
-	color: white;
-	font: 18px "Aileron", sans-serif;
+	color: #FFFFFF;
+	font: 20px "Aileron", sans-serif;
 	font-weight: 100;
+	border-width: 0 2px 0 2px; 
+	border-style: solid;
+	border-color: transparent;
 	}
-	
-p a:hover {
+				
+citynav a:hover {
 	color: #C600FF;
+	border-color: #C600FF;
+	background-color: rgba(198, 0, 255, 0.15);
 	}
 
 iframe {
 	box-sizing: border-box;
 	padding: 4px;
 	margin: 10px 0;
-	border: 1px solid white;
+	border: 2px solid white;
 	max-width: 100%;
 	}
 
 
 /* HIGH-LEVEL CLASSES */
-
 .left { /* float any block to the left of its container */
 	float: left;
 	margin-right: 10px !important;
-}
+	}
 
 .right { /* float any block to the right of its container */
 	float: right;
 	margin-left: 10px !important;
-}
+	}
 
 .clear { /* force clear any floated blocks */
 	clear: both;
-}
+	}
 
 video.banner,
 img.banner,
@@ -175,28 +188,27 @@ image.banner { /* Seperated object-fit media styling as you probably don't want 
 	object-fit: cover;
 	height: 20vh;
 	width: 100%;
-}
+	}
 
 
 /* Travis */
 /* The fun mobile viewport transformation bit */
 /* set so that mobile view will be enabled at screen width 700px and below */
-
 @media only screen and (max-width: 700px) {
 	body {
 		grid-template-columns: unset; /* we set the side-box and main-box to stack vertically */
 		grid-template-rows: auto 1fr; 
-	}
+		}
 
 	nav {
 		flex-direction: row; /* change flex direction to horizontal */
 		flex-wrap: wrap; /* allow multiple rows (for narrow screens) */
 		gap: 15px; /* increase gap between links for better touchscreen usability */ 
-	}
+		}
 
 	nav a {
 		border-width: 0 0 2px; /* override - set bottom width to 2px, disable all other borders */
-	}
+		}
 
 	.side-box {
 
@@ -206,14 +218,12 @@ image.banner { /* Seperated object-fit media styling as you probably don't want 
 		NOTE: Disabled because it I think it looks better keeping to right
 		Uncomment this to move border to bottom on navigation elements :) 
 		>>> border-width: 0 0 2px 0; */
+		}
 	}
-}
 
 /* Additional media query for any overrides for larger (wider) screens */
 @media only screen and (min-width: 1400px) {
-
 	.banner {
 		height: 25vh;
+		}
 	}
-
-}
